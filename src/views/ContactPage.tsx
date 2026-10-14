@@ -232,7 +232,7 @@ export default function ContactPage() {
       `*Preferred Date:* ${encodeURIComponent(preferredDate || 'Not specified')}%0A` +
       `*Message:* ${encodeURIComponent(message || 'No additional message')}`;
 
-    window.open(`https://api.whatsapp.com/send?phone=919603338904&text=${formattedText}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=917799376656&text=${formattedText}`, '_blank');
   };
 
   return (
@@ -294,7 +294,7 @@ export default function ContactPage() {
                       required
                       value={phoneNumber}
                       onChange={(e) => setPhoneNumber(e.target.value)}
-                      placeholder="e.g. 9603338904"
+                      placeholder=""
                       className="contact-input-field"
                     />
                   </div>
