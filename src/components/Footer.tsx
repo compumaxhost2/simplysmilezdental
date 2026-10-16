@@ -179,7 +179,7 @@ export default function Footer() {
                     <i className="fa-brands fa-instagram"></i>
                   </a>
                   <a
-                    href="https://www.facebook.com/share/1F4XvjRLHq/?mibextid=wwXIfr"
+                    href="https://www.facebook.com/Dr.Susheel.R"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
@@ -450,7 +450,7 @@ export default function Footer() {
                       <i className="fa-brands fa-instagram"></i>
                     </a>
                     <a
-                      href="https://www.facebook.com/share/1F4XvjRLHq/?mibextid=wwXIfr"
+                      href="https://www.facebook.com/Dr.Susheel.R"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"
