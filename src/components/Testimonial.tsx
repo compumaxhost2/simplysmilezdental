@@ -104,9 +104,20 @@ export default function Testimonial() {
     }));
   };
 
+  const getScrollStep = () => {
+    if (scrollContainerRef.current) {
+      const firstChild = scrollContainerRef.current.firstElementChild as HTMLElement;
+      if (firstChild) {
+        return firstChild.offsetWidth + 16;
+      }
+      return scrollContainerRef.current.clientWidth * 0.85;
+    }
+    return 340;
+  };
+
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 380;
+      const scrollAmount = getScrollStep();
       scrollContainerRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
@@ -123,7 +134,7 @@ export default function Testimonial() {
       if (!container) return;
 
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      const step = 380;
+      const step = getScrollStep();
 
       // If reached the end, smoothly loop back to start
       if (container.scrollLeft >= maxScrollLeft - 20) {
@@ -131,7 +142,7 @@ export default function Testimonial() {
       } else {
         container.scrollBy({ left: step, behavior: 'smooth' });
       }
-    }, 3500);
+    }, 3800);
 
     return () => clearInterval(interval);
   }, [isInteracting]);
@@ -167,15 +178,15 @@ export default function Testimonial() {
               <span style={{ color: '#475569', fontSize: 13, fontWeight: 600 }}>Google Reviews</span>
             </div>
 
-            <h2 style={{ fontSize: '2.1rem', fontWeight: 800, color: '#0b2545', letterSpacing: '-0.02em', marginBottom: 10 }}>
+            <h2 className="google-reviews-title">
               Real Patient Stories on Google
             </h2>
-            <p style={{ color: '#64748b', fontSize: '15.5px', maxWidth: 620, margin: '0 auto 24px' }}>
+            <p className="google-reviews-subtitle">
               Read 100% genuine reviews from our patients treated by Dr. Ankush Kumar and Dr. Susheel Kumar at Simply Smilez Dental Clinic.
             </p>
 
             {/* Direct CTA Buttons */}
-            <div className="d-flex flex-wrap justify-content-center align-items-center" style={{ gap: 12 }}>
+            <div className="google-reviews-cta-wrap d-flex flex-wrap justify-content-center align-items-center" style={{ gap: 12 }}>
               <a
                 href={GOOGLE_WRITE_REVIEW_URL}
                 target="_blank"
@@ -204,9 +215,9 @@ export default function Testimonial() {
 
         {/* Carousel / Scroller Container with Nav Arrows */}
         <div className="position-relative mt-4">
-          <div className="d-flex justify-content-between align-items-center mb-3">
-            <span style={{ fontSize: 13, fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              <i className="fa-solid fa-arrows-left-right mr-1" /> Scroll horizontally to see all stories
+          <div className="review-scroll-header d-flex justify-content-between align-items-center mb-3">
+            <span className="review-scroll-hint">
+              <i className="fa-solid fa-arrows-left-right mr-1" /> Swipe or scroll to see all stories
             </span>
             <div className="review-scroll-controls d-flex gap-2">
               <button

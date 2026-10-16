@@ -9,9 +9,9 @@ export default function About() {
           <div className="col-md-12 wrap-about py-4 py-md-5">
             <div className="heading-section mb-4">
               <div className="pl-md-5 ml-md-5 pt-md-2">
-                <span className="subheading mb-2">
-                  <h1 style={{ fontSize: '32px', fontWeight: 700, color: '#0d3b66' }}>Welcome to Simply Smilez</h1>
-                </span>
+                <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#0d3b66' }} className="mb-2">
+                  Welcome to Simply Smilez
+                </h2>
               </div>
             </div>
             <div className="pl-md-5 ml-md-5 mb-5">
@@ -25,12 +25,12 @@ export default function About() {
               </p>
 
               <div className="mt-4 pt-4 border-top">
-                <h2 style={{ fontSize: '26px', fontWeight: 700, color: '#0b2545' }} className="mb-2">
+                <h3 style={{ fontSize: '26px', fontWeight: 700, color: '#0b2545' }} className="mb-2">
                   Dental Clinic in Shaikpet, Hyderabad
-                </h2>
-                <h3 style={{ fontSize: '19px', fontWeight: 600, color: '#184e77' }} className="mb-3">
-                  Quality Dental Care for Children and Adults
                 </h3>
+                <h4 style={{ fontSize: '19px', fontWeight: 600, color: '#184e77' }} className="mb-3">
+                  Quality Dental Care for Children and Adults
+                </h4>
                 <p>
                   Looking for a trusted dental clinic in Shaikpet, Hyderabad? Simply Smilez Dental Clinic provides
                   comprehensive dental care for children and adults, with personalized treatments designed to support your

@@ -146,7 +146,7 @@ export default function Header({ onOpenServices }: HeaderProps) {
                   <i className="fa-brands fa-facebook-f"></i>
                 </a>
                 <a
-                  href="https://www.google.com/maps/place/Simply+Smilez+Dental/@17.4110386,78.3924029,17z"
+                  href="https://www.google.com/maps/place/Simply+Smilez+Dental+Clinic+-Fully+Digital+Invisalign+Centre/@17.4109733,78.3924714,1046m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bcb90c618ceaaab:0x5543d8d68ff843d2!8m2!3d17.4109682!4d78.3950463!16s%2Fg%2F11f525jy3x?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ssd-social-circle"

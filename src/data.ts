@@ -150,6 +150,14 @@ export const galleryImages: GalleryItem[] = [
   { id: 17, src: "/images/gallery_17.jpeg", alt: "Simply Smilez Dental Clinic Gallery 17" }
 ];
 
+// Full gallery photos list for Gallery Page (/gallery)
+export const galleryPageImages: GalleryItem[] = [
+  ...galleryImages,
+  { id: 18, src: "/images/gallery_18.jpeg", alt: "Simply Smilez Dental Clinic Gallery 18" },
+  { id: 19, src: "/images/gallery_19.jpeg", alt: "Simply Smilez Dental Clinic Gallery 19" },
+  { id: 20, src: "/images/gallery_20.jpeg", alt: "Simply Smilez Dental Clinic Gallery 20" }
+];
+
 export const faqsData: FAQItem[] = [
   {
     id: 1,

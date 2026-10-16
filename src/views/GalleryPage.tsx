@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from '../components/Link';
-import { galleryImages, GalleryItem } from '../data';
+import { galleryPageImages, GalleryItem } from '../data';
 
 const gallerySchema = {
   "@context": "https://schema.org",
@@ -171,9 +171,9 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          {galleryImages.length > 0 ? (
+          {galleryPageImages.length > 0 ? (
             <div className="row g-3">
-              {galleryImages.map((item: GalleryItem) => (
+              {galleryPageImages.map((item: GalleryItem) => (
                 <div key={item.id} className="col-6 col-md-4 col-lg-3 mb-4">
                   <div
                     className="card shadow-sm h-100 border-0"

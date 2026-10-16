@@ -11,101 +11,53 @@ const microscopicRctSchema = {
       "@type": "WebPage",
       "@id": "https://www.simplysmilezdental.in/services/microscopic-root-canal#webpage",
       "url": "https://www.simplysmilezdental.in/services/microscopic-root-canal",
-      "name": "Microscopic Root Canal Treatment in Hyderabad | Simply Smilez",
-      "description": "Get microscopic root canal treatment in Hyderabad at Simply Smilez Dental Clinic, Shaikpet. Advanced 25x surgical magnification endodontics to preserve infected or damaged teeth.",
-      "about": {
-        "@id": "https://www.simplysmilezdental.in/services/microscopic-root-canal#procedure"
+      "name": "Microscopic Root Canal Treatment in Hyderabad",
+      "description": "Learn about microscopic root canal treatment in Hyderabad, including microscope-assisted RCT, treatment considerations, and retreatment options.",
+      "inLanguage": "en-IN",
+      "breadcrumb": {
+        "@id": "https://www.simplysmilezdental.in/services/microscopic-root-canal#breadcrumb"
       },
       "mainEntity": {
-        "@id": "https://www.simplysmilezdental.in/services/microscopic-root-canal#procedure"
+        "@id": "https://www.simplysmilezdental.in/services/microscopic-root-canal#service"
       },
-      "publisher": {
-        "@id": "https://www.simplysmilezdental.in/#clinic"
+      "isPartOf": {
+        "@id": "https://www.simplysmilezdental.in/#website"
       }
     },
     {
-      "@type": "MedicalProcedure",
-      "@id": "https://www.simplysmilezdental.in/services/microscopic-root-canal#procedure",
+      "@type": "WebSite",
+      "@id": "https://www.simplysmilezdental.in/#website",
+      "url": "https://www.simplysmilezdental.in/",
+      "name": "Simply Smilez Dental",
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.simplysmilezdental.in/services/microscopic-root-canal#service",
       "name": "Microscopic Root Canal Treatment",
-      "alternateName": "Laser Root Canal Treatment in Hyderabad",
-      "description": "Microscopic root canal treatment using surgical dental operating microscopes for infected or damaged teeth at Simply Smilez Dental Clinic in Shaikpet, Hyderabad.",
-      "procedureType": "http://schema.org/NoninvasiveProcedure",
-      "bodyLocation": "Tooth",
+      "serviceType": "Microscope-assisted endodontic treatment",
+      "description": "Microscopic root canal treatment uses magnification to help a dentist examine internal tooth structures during endodontic procedures. Treatment suitability depends on the patient's clinical condition.",
       "url": "https://www.simplysmilezdental.in/services/microscopic-root-canal",
-      "image": "https://www.simplysmilezdental.in/images/microscopic-rct.jpg"
+      "areaServed": {
+        "@type": "City",
+        "name": "Hyderabad"
+      },
+      "provider": {
+        "@id": "https://www.simplysmilezdental.in/#dentist"
+      },
+      "audience": {
+        "@type": "PeopleAudience",
+        "audienceType": "Patients seeking root canal treatment"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.simplysmilezdental.in/services/microscopic-root-canal#webpage"
+      }
     },
     {
       "@type": "Dentist",
-      "@id": "https://www.simplysmilezdental.in/#clinic",
-      "name": "Simply Smilez Dental Clinic",
-      "url": "https://www.simplysmilezdental.in/",
-      "image": "https://www.simplysmilezdental.in/images/about.webp",
-      "telephone": [
-        "+91-9603338904",
-        "+91-7799376656"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "P.V. Reddy Complex, 1st Floor, Dwaraka Nagar Colony, O.U. Colony Road",
-        "addressLocality": "Shaikpet",
-        "addressRegion": "Telangana",
-        "postalCode": "500008",
-        "addressCountry": "IN"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.simplysmilezdental.in/services/microscopic-root-canal#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is microscopic root canal treatment?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Microscopic root canal treatment incorporates high-magnification surgical operating microscopes (up to 25x) into endodontic therapy. It allows the specialist to locate hidden extra canals, navigate calcified canals, and thoroughly eliminate infection while preserving natural tooth structure."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is root canal treatment suitable for everyone?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Treatment suitability depends on the condition of the tooth, the extent of infection, remaining tooth structure and other clinical factors. A dental examination is required before treatment."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can root canal treatment save an infected tooth?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Root canal treatment can save many teeth affected by pulp infection or damage when the tooth has sufficient remaining structure and can be properly restored."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does root canal treatment hurt?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Local anaesthesia is generally used during root canal treatment. Some temporary tenderness may occur afterward. Modern microscopic procedures are virtually painless."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Will I need a crown after root canal treatment?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most back teeth require a protective crown after root canal treatment to prevent fractures and restore full chewing function."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does root canal treatment cost in Hyderabad?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The cost depends on the tooth being treated (anterior, premolar, or molar), complexity of the case, and whether re-treatment or retrieval is required."
-          }
-        }
-      ]
+      "@id": "https://www.simplysmilezdental.in/#dentist",
+      "name": "Simply Smilez Dental",
+      "url": "https://www.simplysmilezdental.in/"
     },
     {
       "@type": "BreadcrumbList",
@@ -120,7 +72,13 @@ const microscopicRctSchema = {
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Microscopic Root Canal",
+          "name": "Services",
+          "item": "https://www.simplysmilezdental.in/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Microscopic Root Canal Treatment",
           "item": "https://www.simplysmilezdental.in/services/microscopic-root-canal"
         }
       ]
@@ -133,7 +91,7 @@ export default function MicroscopicRootCanalPage() {
     window.scrollTo(0, 0);
 
     // Page Title
-    document.title = "Microscopic Root Canal Treatment in Hyderabad | Simply Smilez";
+    document.title = "Microscopic Root Canal Treatment in Hyderabad | Simply Smilez Dental";
 
     // Meta Helper function
     const setMeta = (name: string, content: string, isProperty = false) => {
@@ -161,24 +119,27 @@ export default function MicroscopicRootCanalPage() {
     canonical.href = "https://www.simplysmilezdental.in/services/microscopic-root-canal";
 
     // Metadata
-    setMeta("description", "Get microscopic root canal treatment in Hyderabad at Simply Smilez Dental Clinic, Shaikpet. Advanced 25x surgical magnification endodontics to preserve infected or damaged teeth.");
-    setMeta("keywords", "microscopic root canal treatment in Hyderabad, microscopic root canal Hyderabad, laser root canal treatment Shaikpet, root canal treatment Hyderabad, endodontic specialist Hyderabad, root canal dentist Shaikpet, root canal near Manikonda, broken instrument retrieval Hyderabad");
-    setMeta("author", "Simply Smilez Dental Clinic");
+    setMeta("description", "Explore microscopic root canal treatment in Hyderabad at Simply Smilez Dental. Learn about microscope-assisted RCT, retreatment and treatment costs.");
+    setMeta("keywords", "microscopic root canal treatment in Hyderabad, microscopic RCT in Hyderabad, microscope-assisted root canal treatment, dental microscope root canal, microscopic root canal retreatment, microscopic RCT cost in Hyderabad");
+    setMeta("author", "Simply Smilez Dental");
+    setMeta("robots", "index,follow");
+    setMeta("theme-color", "#ffffff");
+    setMeta("referrer", "strict-origin-when-cross-origin");
 
     // Open Graph
     setMeta("og:type", "website", true);
-    setMeta("og:title", "Microscopic Root Canal Treatment in Hyderabad | Simply Smilez", true);
-    setMeta("og:description", "Get microscopic root canal treatment in Hyderabad at Simply Smilez Dental Clinic, Shaikpet. Advanced 25x surgical magnification endodontics to preserve infected or damaged teeth.", true);
+    setMeta("og:title", "Microscopic Root Canal Treatment in Hyderabad | Simply Smilez Dental", true);
+    setMeta("og:description", "Learn about microscopic root canal treatment in Hyderabad, including microscope-assisted RCT, retreatment options and cost considerations.", true);
     setMeta("og:url", "https://www.simplysmilezdental.in/services/microscopic-root-canal", true);
-    setMeta("og:site_name", "Simply Smilez Dental Clinic", true);
-    setMeta("og:image", "https://www.simplysmilezdental.in/images/microscopic-rct.jpg", true);
-    setMeta("og:image:alt", "Microscopic root canal treatment at Simply Smilez Dental Clinic in Shaikpet, Hyderabad", true);
+    setMeta("og:site_name", "Simply Smilez Dental", true);
+    setMeta("og:image", "https://www.simplysmilezdental.in/images/microscopic-root-canal.jpg", true);
+    setMeta("og:image:alt", "Microscopic root canal treatment and dental microscope", true);
 
     // Twitter
     setMeta("twitter:card", "summary_large_image");
-    setMeta("twitter:title", "Microscopic Root Canal Treatment in Hyderabad | Simply Smilez");
-    setMeta("twitter:description", "Microscopic root canal treatment in Hyderabad at Simply Smilez Dental Clinic, Shaikpet, for infected or damaged teeth.");
-    setMeta("twitter:image", "https://www.simplysmilezdental.in/images/microscopic-rct.jpg");
+    setMeta("twitter:title", "Microscopic Root Canal Treatment in Hyderabad | Simply Smilez Dental");
+    setMeta("twitter:description", "Discover microscope-assisted root canal treatment in Hyderabad. Explore treatment benefits, retreatment and cost considerations.");
+    setMeta("twitter:image", "https://www.simplysmilezdental.in/images/microscopic-root-canal.jpg");
 
     // Dynamic Schema script injection
     const scriptId = 'microscopic-rct-schema';
@@ -204,134 +165,300 @@ export default function MicroscopicRootCanalPage() {
           <div className="col-lg-8 col-md-12 text-left">
             <div className="about-us text-left">
               <h1 className="h2 font-weight-bold mb-3 text-left" style={{ color: "#00b7ff" }}>
-                Microscopic Root Canal Treatment in Hyderabad | Simply Smilez Dental Clinic
+                Microscopic Root Canal Treatment in Hyderabad
               </h1>
               <hr className="short mb-4 ml-0" style={{ marginLeft: "0", width: 60, borderTop: "3px solid #00b7ff" }} />
 
               <p className="lead text-left">
-                A painful, infected or severely damaged tooth does not always need to be extracted. In many cases, advanced root canal treatment can eliminate deep bacterial infection from inside the tooth and preserve your natural tooth structure for life.
+                Experiencing persistent tooth pain or sensitivity? Microscopic root canal treatment uses a dental operating microscope to provide enhanced magnification and visibility during root canal procedures. This can help the dentist examine complex tooth structures and manage challenging cases with greater visual detail.
               </p>
               <p className="text-left">
-                At <strong>Simply Smilez Dental Clinic</strong> in Shaikpet, Hyderabad, we provide specialized <strong>Microscopic Root Canal Treatment (Micro-Endodontics)</strong> using surgical dental operating microscopes. Treatment is planned precisely according to the condition of the tooth, the anatomical complexity of the root canals, and the patient&apos;s individual oral health needs.
+                If you are considering microscopic root canal treatment in Hyderabad, Simply Smilez Dental can be your point of contact to enquire about an assessment and learn which treatment options may be appropriate for your tooth.
               </p>
               <p className="text-left">
-                The clinic is located at P.V. Reddy Complex, 1st Floor, Dwaraka Nagar Colony, O.U. Colony Road, Shaikpet, Hyderabad &ndash; 500008 and serves patients from Shaikpet and nearby areas including Manikonda, Tolichowki, Raidurg, Puppalaguda, Film Nagar, Jubilee Hills, Banjara Hills, Mehdipatnam, Langar Houz, Gachibowli and Narsingi.
+                <Link to="/contact" className="btn btn-primary px-4 py-2 mt-2 mb-3">
+                  Contact Simply Smilez Dental to enquire about a consultation
+                </Link>
               </p>
 
-              <h3 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
+              <h2 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
                 What Is Microscopic Root Canal Treatment?
-              </h3>
+              </h2>
               <p className="text-left">
-                Root canal treatment is a specialized dental procedure used to treat a tooth when the pulp inside it becomes infected, inflamed or irreversibly damaged. The pulp contains sensitive nerves and blood vessels. Deep tooth decay, fractures, dental trauma or repeated dental procedures can allow harmful bacteria to penetrate deep into the pulp chamber.
+                <Link to="/" style={{ color: "#0284c7", fontWeight: 600 }}>Microscopic root canal treatment</Link>, also known as microscope-assisted RCT, is a procedure that uses magnification to help the dentist examine the inside of a tooth during endodontic treatment.
               </p>
               <p className="text-left">
-                <strong>Microscopic Root Canal Treatment</strong> incorporates high-magnification <strong>surgical dental operating microscopes</strong> into the procedure. While conventional endodontics relies largely on tactile feedback and low-magnification loupes, a surgical microscope magnifies the interior canal anatomy up to <strong>25 times</strong> with shadowless coaxial fiber-optic illumination.
+                The pulp is the soft tissue inside a tooth containing nerves and blood vessels. Deep decay, cracks, trauma, or other damage can cause inflammation or infection. When the pulp cannot heal adequately, root canal treatment may be recommended to remove the affected tissue, clean the root canals, and seal them.
               </p>
               <p className="text-left">
-                This extreme optical magnification allows the endodontist to examine intricate canal structures, locate hidden extra canals (such as MB2 canals in upper molars), identify hairline micro-cracks, and clean out stubborn bacterial biofilm that would otherwise remain hidden and cause treatment failure.
+                A dental operating microscope improves visibility of small anatomical details. This can be particularly useful when the dentist needs to locate narrow or additional canals, examine complex root canal anatomy, or evaluate a previously treated tooth.
               </p>
 
-              <h3 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
-                When Might You Need a Root Canal?
-              </h3>
+              <h2 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
+                Benefits of Microscope-Assisted Root Canal Treatment
+              </h2>
               <p className="text-left">
-                A dentist may recommend root canal treatment when the pulp inside a tooth is infected, non-vital or exposed to bacteria. Common clinical signs and symptoms include:
+                Microscopic RCT offers several potential advantages depending on the tooth and clinical situation.
               </p>
               <ul className="text-left pl-4">
-                <li>Severe, throbbing tooth pain while chewing or biting</li>
-                <li>Prolonged sensitivity to hot or cold foods and liquids that lingers long after the source is removed</li>
-                <li>Deep dental decay reaching into the pulp chamber</li>
-                <li>Dark discoloration or graying of a single tooth</li>
-                <li>Swelling, tenderness or a recurring pimple-like bump (abscess) on the surrounding gums</li>
-                <li>A cracked, fractured or traumatized tooth with nerve exposure</li>
+                <li><strong>Enhanced visibility:</strong> Magnification helps the dentist examine the treatment area in greater detail.</li>
+                <li><strong>Assessment of complex canals:</strong> Some teeth have narrow, curved, or additional canals that can be difficult to identify.</li>
+                <li><strong>Support for complex treatment:</strong> A microscope may be useful when managing challenging root canal anatomy or evaluating persistent symptoms after earlier treatment.</li>
+                <li><strong>More controlled treatment:</strong> Improved visibility can support careful treatment of the internal tooth structure.</li>
               </ul>
               <p className="text-left">
-                In some instances, infected teeth may show minimal symptoms in early stages and are discovered during routine clinical checkups or digital radiographs. An accurate dental examination with digital imaging is essential before determining treatment.
+                Microscopic treatment does not guarantee success or eliminate every complication. Outcomes depend on factors such as the tooth&apos;s condition, infection, anatomy, restoration, and the overall treatment plan.
               </p>
 
-              <h3 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
-                Benefits of Microscopic Root Canal Treatment
-              </h3>
-
-              <h5 className="font-weight-bold text-dark mt-3 text-left">Superior Magnification &amp; Illumination</h5>
+              <h2 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
+                Who May Need Microscopic RCT?
+              </h2>
               <p className="text-left">
-                With up to 25x magnification, the endodontist can clearly inspect root canal orifices, accessory canals, calcified pulp chambers, and anatomical variations that are impossible to discern with the naked eye.
+                Microscope-assisted endodontic treatment may be considered when a patient has:
               </p>
-
-              <h5 className="font-weight-bold text-dark mt-3 text-left">Maximum Preservation of Natural Tooth Structure</h5>
+              <ul className="text-left pl-4">
+                <li>Deep tooth decay affecting the pulp.</li>
+                <li>Tooth pain or sensitivity that requires clinical evaluation.</li>
+                <li>Suspected infection inside the tooth.</li>
+                <li>Complex or unusually shaped root canals.</li>
+                <li>Persistent symptoms after a previous root canal.</li>
+                <li>A previously treated tooth that may need retreatment.</li>
+              </ul>
               <p className="text-left">
-                Microscope-guided endodontics allows for minimally invasive conservative access cavities. This preserves healthy tooth enamel and dentin, ensuring the tooth retains structural integrity for long-term chewing durability.
+                Not every root canal requires a dental microscope. A clinical examination and appropriate diagnostic imaging help the dentist determine whether this approach is suitable.
               </p>
 
-              <h5 className="font-weight-bold text-dark mt-3 text-left">Broken Instrument &amp; File Retrieval</h5>
+              <h2 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
+                How Does Microscopic Root Canal Treatment Work?
+              </h2>
               <p className="text-left">
-                In complicated or failed previous root canal treatments where an endodontic instrument or needle broke inside the canal, a surgical microscope combined with ultrasonic micro-tips enables safe visualization, bypass, and retrieval of the separated instrument to save the tooth from extraction.
+                The procedure varies according to the tooth and the complexity of the case. Treatment generally involves the following stages.
               </p>
 
-              <h5 className="font-weight-bold text-dark mt-3 text-left">Painless &amp; Single-Sitting Convenience</h5>
+              <h3 className="h5 font-weight-bold text-dark mt-3 text-left">1. Examination and diagnosis</h3>
               <p className="text-left">
-                Modern computer-controlled local anesthesia, rotary nickel-titanium instruments, and digital apex locators make microscopic RCT virtually painless, comfortable, and frequently achievable in a single focused sitting.
+                The dentist evaluates your symptoms, examines the affected tooth, and may recommend diagnostic imaging to assess the roots and surrounding tissues.
               </p>
 
-              <h5 className="font-weight-bold text-dark mt-3 text-left">Significantly Higher Clinical Success Rate</h5>
+              <h3 className="h5 font-weight-bold text-dark mt-3 text-left">2. Treatment planning</h3>
               <p className="text-left">
-                By ensuring complete removal of bacterial infection and creating a 3D hermetic seal, microscopic root canal therapy delivers clinically proven success rates exceeding 95%.
+                The dentist determines whether root canal treatment is appropriate and evaluates the complexity of the root canal system.
               </p>
 
-              <h3 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
-                The Microscopic RCT Procedure Step-by-Step
-              </h3>
-
-              <h5 className="font-weight-bold text-dark mt-3 text-left">1. Comprehensive Clinical &amp; Digital X-Ray Examination</h5>
+              <h3 className="h5 font-weight-bold text-dark mt-3 text-left">3. Cleaning and shaping</h3>
               <p className="text-left">
-                High-resolution digital radiographs and CBCT scans are evaluated to examine the root curvature, number of canals, bone density, and surrounding periapical tissues.
+                Under local anesthesia, the dentist accesses the inside of the tooth, removes affected pulp tissue, and cleans and shapes the root canals. Magnification can help improve visibility during relevant stages.
               </p>
 
-              <h5 className="font-weight-bold text-dark mt-3 text-left">2. Gentle Local Anesthesia &amp; Rubber Dam Isolation</h5>
+              <h3 className="h5 font-weight-bold text-dark mt-3 text-left">4. Disinfection and sealing</h3>
               <p className="text-left">
-                Targeted local anesthesia is administered to ensure a 100% painless experience. A specialized rubber dam is placed over the tooth to isolate it from saliva and maintain a completely sterile working field.
+                The cleaned canals are disinfected and filled with an appropriate root canal material to seal the internal space.
               </p>
 
-              <h5 className="font-weight-bold text-dark mt-3 text-left">3. Microscopic Access &amp; Canal Disinfection</h5>
+              <h3 className="h5 font-weight-bold text-dark mt-3 text-left">5. Final restoration</h3>
               <p className="text-left">
-                Under the surgical operating microscope, a precision micro-opening is made into the pulp chamber. Infected pulp tissue is gently removed, and canals are thoroughly disinfected using advanced ultrasonic irrigation and rotary instruments.
+                Depending on the remaining tooth structure, a filling or crown may be recommended to restore function and protect the treated tooth.
+              </p>
+              <p className="text-left">
+                Some cases can be completed in one appointment, while others require multiple visits. Your dentist can explain the expected treatment schedule after assessment.
               </p>
 
-              <h5 className="font-weight-bold text-dark mt-3 text-left">4. 3D Biocompatible Obturation (Sealing)</h5>
+              <h2 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
+                Microscopic Root Canal Retreatment
+              </h2>
               <p className="text-left">
-                Once completely sanitized, the prepared root canals are filled with biocompatible gutta-percha and bioceramic sealer, hermetically sealing the canals against future bacterial penetration.
+                Sometimes, a tooth that has already undergone root canal treatment continues to cause discomfort or develops a new problem. Possible reasons include persistent infection, complex canal anatomy, or problems affecting the restoration.
+              </p>
+              <p className="text-left">
+                Microscopic root canal retreatment involves reassessing the previously treated tooth and determining whether further endodontic treatment may help. Magnification can assist the dentist in examining the existing treatment and locating relevant canal structures.
+              </p>
+              <p className="text-left">
+                Retreatment is not suitable for every tooth. The remaining tooth structure, the cause of the problem, and other treatment options must be evaluated before a recommendation is made.
               </p>
 
-              <h5 className="font-weight-bold text-dark mt-3 text-left">5. Permanent Restoration &amp; Crown Placement</h5>
+              <h2 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
+                Microscopic RCT Cost in Hyderabad
+              </h2>
               <p className="text-left">
-                The access cavity is restored with a durable tooth-colored composite core. In most cases, a custom-fitted ceramic or zirconia dental crown is placed to protect the tooth from biting forces and restore full chewing strength.
+                The cost of microscopic root canal treatment in Hyderabad depends on the clinical requirements of each case. Factors that may influence the estimate include:
               </p>
+              <ul className="text-left pl-4">
+                <li>The tooth being treated and its root canal anatomy.</li>
+                <li>The complexity of the procedure.</li>
+                <li>Whether the treatment is a first-time RCT or retreatment.</li>
+                <li>Diagnostic requirements and the extent of damage.</li>
+                <li>The type of final restoration needed.</li>
+              </ul>
+              <p className="text-left">
+                An accurate estimate requires an assessment of the tooth and its treatment needs. Contact Simply Smilez Dental to enquire about consultation fees, treatment availability, and pricing.
+              </p>
+
+              <h2 className="h4 font-weight-bold mt-4 mb-3 text-left" style={{ color: "#0d3b66" }}>
+                Choosing a Provider for Microscopic Root Canal Treatment
+              </h2>
+              <p className="text-left">
+                When considering microscope-assisted RCT, ask the dental provider about the proposed diagnosis, the role of magnification in your case, the expected number of appointments, and the restoration required afterward.
+              </p>
+              <p className="text-left">
+                Understanding these details helps you make an informed decision about treatment and the preservation of your natural tooth.
+              </p>
+              <p className="text-left">
+                If you are looking for <Link to="/" style={{ color: "#0284c7", fontWeight: 600 }}>microscopic root canal treatment in Hyderabad</Link>, contact Simply Smilez Dental to discuss your symptoms, enquire about an appointment, and learn about the options available for your dental condition.
+              </p>
+
+              {/* Internal Links: Explore Other Dental Services */}
+              <div className="mt-5 pt-4 border-top text-left">
+                <h3 className="h4 font-weight-bold mb-3 text-left" style={{ color: "#0d3b66" }}>Explore Other Dental Services</h3>
+                <p className="text-left mb-4">Simply Smilez Dental Clinic in Shaikpet, Hyderabad offers a comprehensive range of advanced dental treatments:</p>
+                <div className="row">
+                  <div className="col-md-6 col-12 mb-3">
+                    <Link to="/services/crowns" className="service-card-link p-3 text-left">
+                      <div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <h5 className="h6 font-weight-bold service-title mb-0 text-left">Dental Crowns &amp; Bridges</h5>
+                          <i className="fas fa-chevron-right text-primary small" />
+                        </div>
+                        <p className="small text-muted mb-2 text-left">Custom restorative crowns and caps to protect and strengthen your treated teeth.</p>
+                      </div>
+                      <span className="btn-learn-more text-left mt-2">View Service <i className="fas fa-arrow-right ml-1" /></span>
+                    </Link>
+                  </div>
+                  <div className="col-md-6 col-12 mb-3">
+                    <Link to="/services/composite-fillings" className="service-card-link p-3 text-left">
+                      <div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <h5 className="h6 font-weight-bold service-title mb-0 text-left">Composite Teeth Fillings</h5>
+                          <i className="fas fa-chevron-right text-primary small" />
+                        </div>
+                        <p className="small text-muted mb-2 text-left">Tooth-colored natural restorations for cavities, decay, and tooth rebuilding.</p>
+                      </div>
+                      <span className="btn-learn-more text-left mt-2">View Service <i className="fas fa-arrow-right ml-1" /></span>
+                    </Link>
+                  </div>
+                  <div className="col-md-6 col-12 mb-3">
+                    <Link to="/services/dental-implants" className="service-card-link p-3 text-left">
+                      <div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <h5 className="h6 font-weight-bold service-title mb-0 text-left">Dental Implants</h5>
+                          <i className="fas fa-chevron-right text-primary small" />
+                        </div>
+                        <p className="small text-muted mb-2 text-left">Permanent tooth replacement solution with natural-looking titanium implants.</p>
+                      </div>
+                      <span className="btn-learn-more text-left mt-2">View Service <i className="fas fa-arrow-right ml-1" /></span>
+                    </Link>
+                  </div>
+                  <div className="col-md-6 col-12 mb-3">
+                    <Link to="/services/braces" className="service-card-link p-3 text-left">
+                      <div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <h5 className="h6 font-weight-bold service-title mb-0 text-left">Braces &amp; Invisalign</h5>
+                          <i className="fas fa-chevron-right text-primary small" />
+                        </div>
+                        <p className="small text-muted mb-2 text-left">Orthodontic teeth alignment with clear aligners and modern braces.</p>
+                      </div>
+                      <span className="btn-learn-more text-left mt-2">View Service <i className="fas fa-arrow-right ml-1" /></span>
+                    </Link>
+                  </div>
+                  <div className="col-md-6 col-12 mb-3">
+                    <Link to="/services/veneers" className="service-card-link p-3 text-left">
+                      <div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <h5 className="h6 font-weight-bold service-title mb-0 text-left">Dental Veneers</h5>
+                          <i className="fas fa-chevron-right text-primary small" />
+                        </div>
+                        <p className="small text-muted mb-2 text-left">Custom cosmetic porcelain and composite veneers for an aesthetic smile makeover.</p>
+                      </div>
+                      <span className="btn-learn-more text-left mt-2">View Service <i className="fas fa-arrow-right ml-1" /></span>
+                    </Link>
+                  </div>
+                  <div className="col-md-6 col-12 mb-3">
+                    <Link to="/services/laser-teeth-whitening" className="service-card-link p-3 text-left">
+                      <div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <h5 className="h6 font-weight-bold service-title mb-0 text-left">Laser Teeth Whitening</h5>
+                          <i className="fas fa-chevron-right text-primary small" />
+                        </div>
+                        <p className="small text-muted mb-2 text-left">Professional in-clinic laser teeth bleaching for a radiant, brighter smile.</p>
+                      </div>
+                      <span className="btn-learn-more text-left mt-2">View Service <i className="fas fa-arrow-right ml-1" /></span>
+                    </Link>
+                  </div>
+                  <div className="col-md-6 col-12 mb-3">
+                    <Link to="/services/laser-gum-surgery" className="service-card-link p-3 text-left">
+                      <div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <h5 className="h6 font-weight-bold service-title mb-0 text-left">Laser Gum Surgery</h5>
+                          <i className="fas fa-chevron-right text-primary small" />
+                        </div>
+                        <p className="small text-muted mb-2 text-left">Minimally invasive laser periodontal treatment and gum reshaping.</p>
+                      </div>
+                      <span className="btn-learn-more text-left mt-2">View Service <i className="fas fa-arrow-right ml-1" /></span>
+                    </Link>
+                  </div>
+                  <div className="col-md-6 col-12 mb-3">
+                    <Link to="/services/pediatric-dentistry" className="service-card-link p-3 text-left">
+                      <div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <h5 className="h6 font-weight-bold service-title mb-0 text-left">Pediatric Dentistry</h5>
+                          <i className="fas fa-chevron-right text-primary small" />
+                        </div>
+                        <p className="small text-muted mb-2 text-left">Gentle dental care, checkups, and preventive treatments for children.</p>
+                      </div>
+                      <span className="btn-learn-more text-left mt-2">View Service <i className="fas fa-arrow-right ml-1" /></span>
+                    </Link>
+                  </div>
+                  <div className="col-md-6 col-12 mb-3">
+                    <Link to="/services/wisdom-tooth-extraction" className="service-card-link p-3 text-left">
+                      <div>
+                        <div className="d-flex justify-content-between align-items-center mb-2">
+                          <h5 className="h6 font-weight-bold service-title mb-0 text-left">Wisdom Tooth Extraction</h5>
+                          <i className="fas fa-chevron-right text-primary small" />
+                        </div>
+                        <p className="small text-muted mb-2 text-left">Painless surgical and non-surgical removal of impacted third molars.</p>
+                      </div>
+                      <span className="btn-learn-more text-left mt-2">View Service <i className="fas fa-arrow-right ml-1" /></span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
 
               {/* FAQs accordion matching design */}
               <ServiceFaq
                 title="Frequently Asked Questions"
                 faqs={[
                   {
-                    question: "Is Microscopic Root Canal Treatment painful?",
-                    answer: "No. Modern dental anesthesia and precision microscope techniques ensure the procedure is virtually painless. Most patients experience immediate relief from the throbbing pain caused by their infected tooth pulp."
+                    question: "What is the difference between conventional RCT and microscopic RCT?",
+                    answer: "Both procedures aim to clean, disinfect, and seal the root canal system. Microscopic RCT uses a dental operating microscope to improve visibility during treatment. This can be helpful in complex cases, but not every patient requires microscope-assisted treatment."
                   },
                   {
-                    question: "Can a broken instrument / file be retrieved from a root canal?",
-                    answer: "Yes. Under high surgical magnification and with ultrasonic tips, Dr. Susheel Kumar specializes in locating, bypassing, and retrieving separated endodontic instruments from previously complicated cases."
+                    question: "Is microscopic root canal treatment painful?",
+                    answer: "Local anesthesia is generally used to manage pain during root canal treatment. Some tenderness may occur afterward, depending on the condition of the tooth and surrounding tissues. Discuss pain management and any concerns with your dentist before the procedure."
                   },
                   {
-                    question: "How many visits are required for a root canal?",
-                    answer: "Most standard root canal treatments are comfortably completed in a single appointment of 45 to 60 minutes. Complex re-treatments or severe infections may require two appointments to ensure thorough disinfection."
+                    question: "How long does microscopic RCT take?",
+                    answer: "Treatment time depends on the tooth, canal anatomy, infection, and whether retreatment is needed. Some cases can be completed in one appointment, while others require multiple visits. Your dentist can provide a more specific estimate after examining the tooth."
                   },
                   {
-                    question: "Is a dental crown necessary after a root canal?",
-                    answer: "Yes, in almost all cases. Teeth requiring root canal therapy have usually lost substantial tooth structure due to decay. A custom dental crown seals the tooth, restores biting strength, and protects against future fractures."
+                    question: "What is the cost of microscopic RCT in Hyderabad?",
+                    answer: "The price depends on the tooth, procedural complexity, diagnostic needs, and final restoration. Retreatment may involve additional requirements. Contact Simply Smilez Dental for current pricing information and an estimate based on your clinical needs."
+                  },
+                  {
+                    question: "Can a previously failed root canal be treated under a microscope?",
+                    answer: "Some previously treated teeth may be suitable for retreatment. A microscope can help the dentist examine the root canal system, but success depends on the underlying problem and the condition of the tooth. An examination is necessary to determine the available options."
+                  },
+                  {
+                    question: "How do I know if I need a root canal?",
+                    answer: "Persistent toothache, prolonged sensitivity, pain when chewing, swelling, or tooth damage may require dental assessment. These symptoms do not automatically mean you need a root canal. A dentist must identify the cause before recommending treatment."
+                  },
+                  {
+                    question: "How can I enquire about microscopic RCT at Simply Smilez Dental?",
+                    answer: "Use the contact options available on the Simply Smilez Dental website to enquire about appointment availability, microscopic treatment options, and consultation costs. The clinic can confirm the services available and explain the next steps."
                   }
                 ]}
               />
 
-              {/* Ready to Discuss Box matching other service pages */}
-              <div className="bg-light p-4 rounded text-left border mb-4">
+              {/* Ready to Discuss Box */}
+              <div className="bg-light p-4 rounded text-left border mb-4 mt-4">
                 <h3 className="h4 font-weight-bold text-left mb-3" style={{ color: "#0d3b66" }}>
                   Ready to Discuss Your Root Canal Treatment?
                 </h3>
@@ -362,12 +489,12 @@ export default function MicroscopicRootCanalPage() {
             </div>
           </div>
 
-          {/* Right Column: Sticky Sidebar matching CrownsPage / other service pages */}
+          {/* Right Column: Sticky Sidebar */}
           <div className="col-lg-4 col-md-12 mt-4 mt-lg-0 text-left">
             <div className="sticky-top" style={{ top: 100 }}>
               <div className="card border-0 shadow-sm mb-4">
                 <img
-                  src="/images/microscopic-rct.jpg"
+                  src="/images/microscopic-root-canal.jpg"
                   className="card-img-top rounded-top"
                   alt="Microscopic Root Canal Treatment in Hyderabad"
                 />
@@ -376,9 +503,9 @@ export default function MicroscopicRootCanalPage() {
                     Microscopic Root Canal Treatment
                   </h4>
                   <p className="card-text text-muted text-left">
-                    High-magnification surgical operating microscope endodontics to eliminate infection, retrieve broken instruments, and preserve natural teeth.
+                    Microscope-assisted endodontics to enhance visibility, evaluate complex root canals, and manage retreatment with precision.
                   </p>
-                  <Link to="/contact" className="btn btn-primary btn-block">Book Consultation</Link>
+                  <Link to="/contact" className="btn btn-primary btn-block">Enquire About Consultation</Link>
                 </div>
               </div>
 
@@ -386,7 +513,7 @@ export default function MicroscopicRootCanalPage() {
                 <h4 className="text-white font-weight-bold mb-3 text-left">Simply Smilez Dental Clinic</h4>
                 <p className="mb-3 text-left">
                   <i className="icon-map-marker mr-2" />
-                  <a href="https://maps.app.goo.gl/wvkijcKcuaGCoHTq9" target="_blank" rel="noopener noreferrer" className="text-white">
+                  <a href="https://www.google.com/maps/place/Simply+Smilez+Dental+Clinic+-Fully+Digital+Invisalign+Centre/@17.4109733,78.3924714,1046m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bcb90c618ceaaab:0x5543d8d68ff843d2!8m2!3d17.4109682!4d78.3950463!16s%2Fg%2F11f525jy3x?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="text-white">
                     P.V.Reddy Complex 1st Floor, Dwaraka Nagar Colony, O.U Colony Road, Shaikpet, Hyderabad, 500008
                   </a>
                 </p>

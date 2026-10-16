@@ -64,9 +64,9 @@ export default function WhyUs() {
                     >
                       <i className={`fa-solid ${r.icon}`}></i>
                     </div>
-                    <h4 className="mb-0 why-choose-card-title">
+                    <h3 className="mb-0 why-choose-card-title">
                       {r.title}
-                    </h4>
+                    </h3>
                   </div>
                   <p className="why-choose-card-desc">
                     {r.desc}

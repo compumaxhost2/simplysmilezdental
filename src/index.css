@@ -3142,19 +3142,44 @@ body.mobile-menu-open .mobile-services-dropup-backdrop {
 }
 
 /* Reviews In-Section Horizontal Scroller */
+.google-reviews-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0b2545;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.google-reviews-subtitle {
+  color: #64748b;
+  font-size: 15.5px;
+  max-width: 620px;
+  margin: 0 auto 24px;
+}
+
+.review-scroll-hint {
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Reviews In-Section Horizontal Scroller */
 .reviews-horizontal-scroller {
   display: flex;
   overflow-x: auto;
-  gap: 24px;
+  gap: 20px;
   padding: 12px 4px 20px 4px;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
   scrollbar-width: thin;
   scrollbar-color: #0284c7 #e2e8f0;
 }
 
 .reviews-horizontal-scroller::-webkit-scrollbar {
-  height: 8px;
+  height: 6px;
 }
 
 .reviews-horizontal-scroller::-webkit-scrollbar-track {
@@ -3175,12 +3200,65 @@ body.mobile-menu-open .mobile-services-dropup-backdrop {
 .review-scroll-item {
   flex: 0 0 380px;
   max-width: 380px;
+  scroll-snap-align: start;
 }
 
 @media (max-width: 767.98px) {
+  .google-reviews-title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  .google-reviews-subtitle {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .google-reviews-cta-wrap {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-google-review-primary,
+  .btn-google-review-secondary {
+    width: 100%;
+    padding: 11px 18px;
+    font-size: 14px;
+  }
+
+  .review-scroll-header {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .review-scroll-hint {
+    font-size: 11.5px;
+  }
+
+  .reviews-horizontal-scroller {
+    gap: 14px;
+    padding: 8px 2px 16px 2px;
+  }
+
   .review-scroll-item {
-    flex: 0 0 310px;
-    max-width: 310px;
+    flex: 0 0 min(86vw, 320px);
+    max-width: min(86vw, 320px);
+  }
+
+  .google-review-card {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  .google-review-text {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin: 8px 0 14px;
+  }
+
+  .review-scroll-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
   }
 }
 

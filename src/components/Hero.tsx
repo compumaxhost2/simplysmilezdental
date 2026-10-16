@@ -66,9 +66,15 @@ export default function Hero() {
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="row no-gutters slider-text align-items-center justify-content-end">
               <div className="col-md-6 text">
-                <h1 className="mb-4 text-white" style={{ fontSize: '42px', fontWeight: 700, lineHeight: 1.2 }}>
-                  {slide.title}
-                </h1>
+                {index === 0 ? (
+                  <h1 className="mb-4 text-white" style={{ fontSize: '42px', fontWeight: 700, lineHeight: 1.2 }}>
+                    {slide.title}
+                  </h1>
+                ) : (
+                  <h2 className="mb-4 text-white" style={{ fontSize: '42px', fontWeight: 700, lineHeight: 1.2 }}>
+                    {slide.title}
+                  </h2>
+                )}
                 <p className="subheading text-white" style={{ fontSize: '18px', fontWeight: 400 }}>
                   {slide.subheading}
                 </p>
