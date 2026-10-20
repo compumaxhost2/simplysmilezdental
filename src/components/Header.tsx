@@ -29,16 +29,38 @@ const specialtiesList: SpecialtyMenuItem[] = [
 export default function Header({ onOpenServices }: HeaderProps) {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+  const [invisalignOpen, setInvisalignOpen] = useState<boolean>(false);
+  const [invisalignFirstOpen, setInvisalignFirstOpen] = useState<boolean>(false);
   const [moreDropdownOpen, setMoreDropdownOpen] = useState<boolean>(false);
   const [mobileSpecialtiesOpen, setMobileSpecialtiesOpen] = useState<boolean>(false);
+  const [mobileInvisalignOpen, setMobileInvisalignOpen] = useState<boolean>(false);
+  const [mobileInvisalignFirstOpen, setMobileInvisalignFirstOpen] = useState<boolean>(false);
   const [mobileMoreOpen, setMobileMoreOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLLIElement>(null);
   const moreDropdownRef = useRef<HTMLLIElement>(null);
+  const invisalignTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleInvisalignEnter = () => {
+    if (invisalignTimerRef.current) {
+      clearTimeout(invisalignTimerRef.current);
+      invisalignTimerRef.current = null;
+    }
+    setInvisalignOpen(true);
+  };
+
+  const handleInvisalignLeave = () => {
+    invisalignTimerRef.current = setTimeout(() => {
+      setInvisalignOpen(false);
+      setInvisalignFirstOpen(false);
+    }, 280); // 280ms grace period so cursor movement never closes menu accidentally
+  };
 
   useEffect(() => {
     setDropdownOpen(false);
+    setInvisalignOpen(false);
+    setInvisalignFirstOpen(false);
     setMoreDropdownOpen(false);
   }, [pathname]);
 
@@ -228,6 +250,102 @@ export default function Header({ onOpenServices }: HeaderProps) {
                   </Link>
 
                   <div className="ssd-spec-dropdown-list">
+                    {/* Invisalign Menu Group with Nested Submenu */}
+                    <div
+                      className={`ssd-spec-dropdown-item ssd-spec-has-submenu ${invisalignOpen ? 'open' : ''}`}
+                      onMouseEnter={handleInvisalignEnter}
+                      onMouseLeave={handleInvisalignLeave}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setInvisalignOpen((prev) => !prev);
+                      }}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      <span className="ssd-spec-bullet"></span>
+                      <span className="ssd-spec-name">Invisalign</span>
+                      <i className="fa-solid fa-chevron-right ssd-spec-item-arrow" style={{ opacity: 1, transform: 'none' }}></i>
+
+                      {/* Nested Flyout Menu */}
+                      <div className="ssd-spec-nested-menu">
+                        <Link
+                          to="/services/invisalign-hyderabad"
+                          className="ssd-spec-nested-item"
+                          onClick={() => {
+                            setDropdownOpen(false);
+                            setInvisalignOpen(false);
+                          }}
+                        >
+                          <span className="ssd-spec-bullet"></span>
+                          <span>Invisalign (adults)</span>
+                        </Link>
+
+                        <Link
+                          to="/services/invisalign-teens-hyderabad"
+                          className="ssd-spec-nested-item"
+                          onClick={() => {
+                            setDropdownOpen(false);
+                            setInvisalignOpen(false);
+                          }}
+                        >
+                          <span className="ssd-spec-bullet"></span>
+                          <span>Invisalign Teens</span>
+                        </Link>
+
+                        {/* Invisalign First for Kids (hub) Group */}
+                        <div
+                          className="ssd-spec-kids-group"
+                          onMouseEnter={() => setInvisalignFirstOpen(true)}
+                          onMouseLeave={() => setInvisalignFirstOpen(false)}
+                        >
+                          <div
+                            className="ssd-spec-nested-item"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setInvisalignFirstOpen((prev) => !prev);
+                            }}
+                            style={{ cursor: 'pointer', justifyContent: 'space-between' }}
+                          >
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flex: 1 }}>
+                              <span className="ssd-spec-bullet"></span>
+                              <Link
+                                to="/services/invisalign-first-kids-hyderabad"
+                                onClick={() => {
+                                  setDropdownOpen(false);
+                                  setInvisalignOpen(false);
+                                  setInvisalignFirstOpen(false);
+                                }}
+                                style={{ color: 'inherit', textDecoration: 'none' }}
+                              >
+                                Invisalign First for Kids (hub)
+                              </Link>
+                            </div>
+                            <i
+                              className={`fa-solid fa-chevron-${invisalignFirstOpen ? 'up' : 'down'}`}
+                              style={{ fontSize: '10px', color: '#38bdf8', marginLeft: '6px' }}
+                            ></i>
+                          </div>
+
+                          {/* Dropdown item directly below the hub */}
+                          {invisalignFirstOpen && (
+                            <div className="ssd-spec-tertiary-menu">
+                              <Link
+                                to="/services/invisalign-first-crooked-crowded-teeth-bite"
+                                className="ssd-spec-tertiary-item"
+                                onClick={() => {
+                                  setDropdownOpen(false);
+                                  setInvisalignOpen(false);
+                                  setInvisalignFirstOpen(false);
+                                }}
+                              >
+                                <i className="fa-solid fa-arrow-turn-down-right mr-2" style={{ fontSize: '9px', color: '#38bdf8' }}></i>
+                                <span>Crooked, crowded, bite</span>
+                              </Link>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
                     {specialtiesList.map((item, idx) => (
                       <Link
                         key={idx}
@@ -439,6 +557,109 @@ export default function Header({ onOpenServices }: HeaderProps) {
                       <i className="fa-solid fa-list-check"></i> View All Services
                     </Link>
                   </li>
+
+                  {/* Invisalign Nested Group for Mobile */}
+                  <li>
+                    <button
+                      type="button"
+                      className={`ssd-drawer-accordion-btn ${mobileInvisalignOpen ? 'expanded' : ''}`}
+                      onClick={() => setMobileInvisalignOpen(!mobileInvisalignOpen)}
+                      style={{
+                        padding: '8px 10px',
+                        fontSize: '13.5px',
+                        fontWeight: 600,
+                        color: '#0284c7',
+                        background: 'rgba(56, 189, 248, 0.08)',
+                        borderRadius: '6px',
+                        marginBottom: '4px'
+                      }}
+                    >
+                      <span><i className="fa-solid fa-teeth mr-2"></i> Invisalign</span>
+                      <i className="fa-solid fa-chevron-down" style={{ fontSize: '11px' }}></i>
+                    </button>
+
+                    {mobileInvisalignOpen && (
+                      <ul className="ssd-drawer-nested-submenu">
+                        <li>
+                          <Link
+                            to="/services/invisalign-hyderabad"
+                            className="ssd-drawer-sublink"
+                            onClick={() => setDrawerOpen(false)}
+                          >
+                            <i className="fa-regular fa-circle-dot" style={{ fontSize: '10px' }}></i> Invisalign (adults)
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/services/invisalign-teens-hyderabad"
+                            className="ssd-drawer-sublink"
+                            onClick={() => setDrawerOpen(false)}
+                          >
+                            <i className="fa-regular fa-circle-dot" style={{ fontSize: '10px' }}></i> Invisalign Teens
+                          </Link>
+                        </li>
+                        <li>
+                          {/* Invisalign First for Kids (hub) as an Accordion in Mobile */}
+                          <div
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'space-between',
+                              padding: '6px 8px',
+                              borderRadius: '6px',
+                              background: 'rgba(56, 189, 248, 0.05)',
+                              marginBottom: '2px',
+                            }}
+                          >
+                            <Link
+                              to="/services/invisalign-first-kids-hyderabad"
+                              className="ssd-drawer-sublink"
+                              style={{ padding: 0, flex: 1 }}
+                              onClick={() => setDrawerOpen(false)}
+                            >
+                              <i className="fa-regular fa-circle-dot" style={{ fontSize: '10px' }}></i> Invisalign First for Kids (hub)
+                            </Link>
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setMobileInvisalignFirstOpen(!mobileInvisalignFirstOpen);
+                              }}
+                              style={{
+                                background: 'transparent',
+                                border: 'none',
+                                padding: '4px 8px',
+                                color: '#0284c7',
+                                cursor: 'pointer',
+                              }}
+                              aria-label="Toggle Invisalign First menu"
+                            >
+                              <i
+                                className={`fa-solid fa-chevron-${mobileInvisalignFirstOpen ? 'up' : 'down'}`}
+                                style={{ fontSize: '10px' }}
+                              ></i>
+                            </button>
+                          </div>
+
+                          {mobileInvisalignFirstOpen && (
+                            <ul className="ssd-drawer-subnested-submenu">
+                              <li>
+                                <Link
+                                  to="/services/invisalign-first-crooked-crowded-teeth-bite"
+                                  className="ssd-drawer-sublink"
+                                  style={{ fontSize: '12.5px', color: '#0284c7' }}
+                                  onClick={() => setDrawerOpen(false)}
+                                >
+                                  <i className="fa-solid fa-arrow-turn-down-right" style={{ fontSize: '9px' }}></i> Crooked, crowded, bite
+                                </Link>
+                              </li>
+                            </ul>
+                          )}
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+
                   {specialtiesList.map((s, i) => (
                     <li key={i}>
                       <Link

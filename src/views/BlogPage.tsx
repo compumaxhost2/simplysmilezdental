@@ -98,7 +98,6 @@ export default function BlogPage() {
                     >
                       {post.excerpt}
                     </Link>
-
                     <div className="mt-3 pt-3 border-top">
                       <Link
                         to={`/blog/${post.slug}`}

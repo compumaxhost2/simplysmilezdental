@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Dental Health Blog & Articles | Simply Smilez Dental Clinic',
     description: 'Oral health tips, braces advice, Invisalign care, and dental updates.',
     url: 'https://www.simplysmilezdental.in/blog',
-    images: [{ url: 'https://www.simplysmilezdental.in/images/about.webp', alt: 'Dental Blog Simply Smilez' }],
+    images: [{ url: 'https://www.simplysmilezdental.in/images/invisalign-aligners-for-kids-hyderabad.jpg', alt: 'Dental Blog Simply Smilez' }],
   },
 };
 

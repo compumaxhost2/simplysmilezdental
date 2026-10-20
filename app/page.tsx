@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     description:
       'Comprehensive dental care in Shaikpet, Hyderabad, including Invisalign, Invisalign First for Kids, root canals, braces, implants and more.',
     url: 'https://www.simplysmilezdental.in/',
-    images: [{ url: 'https://www.simplysmilezdental.in/images/about.webp', alt: 'Simply Smilez Dental Clinic in Shaikpet, Hyderabad' }],
+    images: [{ url: 'https://www.simplysmilezdental.in/images/banner1.jpeg', alt: 'Simply Smilez Dental Clinic in Shaikpet, Hyderabad' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Dental Clinic in Shaikpet, Hyderabad | Simply Smilez Dental',
     description:
       'Invisalign, Invisalign First for Kids, root canals, braces, implants and family dental care in Shaikpet, Hyderabad.',
-    images: ['https://www.simplysmilezdental.in/images/about.webp'],
+    images: ['https://www.simplysmilezdental.in/images/banner1.jpeg'],
   },
 };
 
@@ -32,7 +32,7 @@ const homeSchema = {
   "url": "https://www.simplysmilezdental.in/",
   "description": "Simply Smilez Dental Clinic provides comprehensive dental care for children and adults in Shaikpet, Hyderabad, including Invisalign, Invisalign First for Kids, braces, root canal treatment, dental implants, cosmetic dentistry, pediatric dentistry and general dental care.",
   "medicalSpecialty": "Dentistry",
-  "image": "https://www.simplysmilezdental.in/images/about.webp",
+  "image": "https://www.simplysmilezdental.in/images/banner1.jpeg",
   "logo": {
     "@type": "ImageObject",
     "url": "https://www.simplysmilezdental.in/images/logo-3.webp"
