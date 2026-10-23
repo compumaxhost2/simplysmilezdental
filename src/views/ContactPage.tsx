@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from '../components/Link';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 const HYDERABAD_AREAS = [
   "Shaikpet",
@@ -232,6 +233,7 @@ export default function ContactPage() {
       `*Preferred Date:* ${encodeURIComponent(preferredDate || 'Not specified')}%0A` +
       `*Message:* ${encodeURIComponent(message || 'No additional message')}`;
 
+    trackWhatsAppClick('Contact Page Consultation Form', `WhatsApp Consultation: ${treatment}`);
     window.open(`https://api.whatsapp.com/send?phone=917799376656&text=${formattedText}`, '_blank');
   };
 

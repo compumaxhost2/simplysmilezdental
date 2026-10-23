@@ -5,12 +5,16 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MobileBottomBar from '../components/MobileBottomBar';
 import ServicesModal from '../components/ServicesModal';
+import AnalyticsTracker from './AnalyticsTracker';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const [isServicesModalOpen, setIsServicesModalOpen] = useState(false);
 
   return (
     <div className="app-root" suppressHydrationWarning>
+      {/* Automated Google Analytics Event Tracking for Calls, Emails, Social & External Links */}
+      <AnalyticsTracker />
+
       {/* Top Header & Navigation */}
       <Header onOpenServices={() => setIsServicesModalOpen(true)} />
 
