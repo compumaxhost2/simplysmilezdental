@@ -52,6 +52,47 @@ const pageSchema = {
         "bestRating": "5",
         "worstRating": "1"
       },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Zufisha Zareen"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "I recently completed my braces treatment with Dr. Ankush, and I could not be happier with the results! My teeth are now perfectly aligned and look amazing. Highly recommended!"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Shanmukh Pyata"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "I would like to sincerely thank Dr. Susheel Kumar for the outstanding care and treatment provided to my child with Invisalign. The entire Invisalign journey has been smooth."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Atul Sahu"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "I visited the clinic for a re-root canal treatment, which was performed by Dr. Susheel. My case was complicated because there was a broken instrument inside the root canal. The entire procedure was virtually painless."
+        }
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "P.V. Reddy Complex, 1st Floor, Dwaraka Nagar Colony, O.U. Colony Road",
@@ -96,54 +137,6 @@ const pageSchema = {
       "breadcrumb": {
         "@id": "https://www.simplysmilezdental.in/testimonials#breadcrumb"
       }
-    },
-    {
-      "@type": "Review",
-      "itemReviewed": {
-        "@id": "https://www.simplysmilezdental.in/#clinic"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Zufisha Zareen"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "I recently completed my braces treatment with Dr. Ankush, and I could not be happier with the results! My teeth are now perfectly aligned and look amazing. Highly recommended!"
-    },
-    {
-      "@type": "Review",
-      "itemReviewed": {
-        "@id": "https://www.simplysmilezdental.in/#clinic"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Shanmukh Pyata"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "I would like to sincerely thank Dr. Susheel Kumar for the outstanding care and treatment provided to my child with Invisalign. The entire Invisalign journey has been smooth."
-    },
-    {
-      "@type": "Review",
-      "itemReviewed": {
-        "@id": "https://www.simplysmilezdental.in/#clinic"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Atul Sahu"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "I visited the clinic for a re-root canal treatment, which was performed by Dr. Susheel. My case was complicated because there was a broken instrument inside the root canal. The entire procedure was virtually painless."
     },
     {
       "@type": "BreadcrumbList",

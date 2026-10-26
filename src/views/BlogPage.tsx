@@ -11,14 +11,22 @@ export default function BlogPage() {
 
   const blogPosts = [
     {
+      title: "Best Age for Braces for Kids in Hyderabad: Early Orthodontic Checkups in Shaikpet, Manikonda & Tolichowki",
+      slug: "best-age-for-braces-kids-hyderabad",
+      excerpt: "Learn what the best age is for your child's first orthodontic evaluation, signs they may need braces, Invisalign First vs traditional braces, and treatment costs in Hyderabad.",
+      readTime: "6 min read",
+      author: "Dr. Susheel Kumar",
+      image: "/images/kids-braces-hyderabad-thumbnail.jpg",
+      date: "Latest Guide"
+    },
+    {
       title: "Invisalign Aligners for Kids in Hyderabad: Benefits, Right Age, and Expert Care by Dr. Susheel Kumar",
       slug: "invisalign-aligners-for-kids-in-hyderabad",
       excerpt: "Wondering whether your child needs braces or clear aligners? Learn about Invisalign First, the ideal age to start, benefits, treatment costs, and expert orthodontic care.",
-
       readTime: "6 min read",
       author: "Dr. Susheel Kumar",
       image: "/images/invisalign-aligners-for-kids-hyderabad.jpg",
-      date: "Latest Guide"
+      date: "Featured"
     }
   ];
 
