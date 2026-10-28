@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from './Link';
 
 interface Slide {
@@ -47,9 +48,6 @@ export default function Hero() {
           key={index}
           className="slider-item"
           style={{
-            backgroundImage: `url(${slide.bg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
             position: 'absolute',
             top: 0,
             left: 0,
@@ -59,10 +57,24 @@ export default function Hero() {
             transition: 'opacity 1s ease-in-out',
             zIndex: current === index ? 1 : 0,
             display: 'flex',
-            alignItems: 'center'
+            alignItems: 'center',
+            overflow: 'hidden'
           }}
         >
-          <div className="overlay" style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.35)' }}></div>
+          <Image
+            src={slide.bg}
+            alt="Simply Smilez Dental Clinic Hero"
+            fill
+            priority={index === 0}
+            sizes="100vw"
+            quality={85}
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center',
+              zIndex: 0
+            }}
+          />
+          <div className="overlay" style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.35)', zIndex: 1 }}></div>
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
             <div className="row no-gutters slider-text align-items-center justify-content-end">
               <div className="col-md-6 text">

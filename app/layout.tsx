@@ -1,7 +1,15 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Poppins } from 'next/font/google';
 import '../src/index.css';
 import ClientLayout from '../src/components/ClientLayout';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.simplysmilezdental.in'),
@@ -69,16 +77,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
       <head>
-        {/* Google Analytics Tag (gtag.js) */}
+        {/* Google Analytics Tag (gtag.js) - lazyOnload preserves tracking while freeing CPU for FCP/LCP */}
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-3HVHJD8ZT5"
         />
         <Script
           id="google-analytics-gtag"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -89,11 +97,16 @@ export default function RootLayout({
           }}
         />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preload critical LCP Hero image for instant rendering on mobile */}
+        <link rel="preload" as="image" href="/images/banner1.jpeg" fetchPriority="high" />
+
+        {/* CDN preconnection for fast icon asset resolution */}
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          as="style"
+          crossOrigin="anonymous"
         />
         <link
           rel="stylesheet"
@@ -102,15 +115,12 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-          rel="stylesheet"
-        />
-        <link rel="stylesheet" href="/css/animate.css" />
-        <link rel="stylesheet" href="/css/flaticon.css" />
+
+        {/* Core Site Stylesheet */}
+        <link rel="preload" href="/css/style.css" as="style" />
         <link rel="stylesheet" href="/css/style.css" />
       </head>
-      <body suppressHydrationWarning>
+      <body className={poppins.className} suppressHydrationWarning>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
