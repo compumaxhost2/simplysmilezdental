@@ -7,9 +7,29 @@ import { galleryImages, GalleryItem } from '../data';
 export default function Gallery() {
   const [activeImg, setActiveImg] = useState<string | null>(null);
   const [isInteracting, setIsInteracting] = useState(false);
+  const [isInView, setIsInView] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const displayedImages = galleryImages;
+
+  // Track viewport visibility with IntersectionObserver
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setIsInView(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -21,9 +41,9 @@ export default function Gallery() {
     }
   };
 
-  // Automatic smooth scrolling for mobile view
+  // Automatic smooth scrolling for mobile view only when visible
   useEffect(() => {
-    if (isInteracting) return;
+    if (isInteracting || !isInView) return;
 
     // Only run interval on mobile view
     const isMobile = window.innerWidth < 768;
@@ -41,13 +61,14 @@ export default function Gallery() {
       } else {
         container.scrollBy({ left: step, behavior: 'smooth' });
       }
-    }, 3000);
+    }, 3500);
 
     return () => clearInterval(interval);
-  }, [isInteracting]);
+  }, [isInteracting, isInView]);
 
   return (
     <section
+      ref={sectionRef}
       className="album bg-light py-5 gallery-section-wrapper"
       id="gallery"
       onMouseEnter={() => setIsInteracting(true)}

@@ -125,7 +125,7 @@ export const doctorsData: DoctorItem[] = [
     name: "SUSHEEL KUMAR MDS",
     role: "(Pediatric Dentist and Implantologist)",
     tag: "- SR DOCTOR -",
-    image: "/images/susheel1.png",
+    image: "/images/susheel1.webp",
     link: "/doctor/dr-susheel-kumar"
   }
 ];

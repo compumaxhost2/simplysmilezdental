@@ -19,20 +19,39 @@ export default function Services({ onOpenServices }: ServicesProps) {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchOffset, setTouchOffset] = useState<number>(0);
   const [isSwiping, setIsSwiping] = useState<boolean>(false);
+  const [isInView, setIsInView] = useState<boolean>(false);
+  const sectionRef = useRef<HTMLElement>(null);
   const totalSlides = filteredServices.length;
 
-  // Auto slide ONLY in mobile (< 768px)
+  // Track viewport visibility with IntersectionObserver
   useEffect(() => {
-    // Only run on small screens
+    const el = sectionRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setIsInView(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto slide ONLY in mobile (< 768px) and ONLY when section is visible in viewport
+  useEffect(() => {
     const isMobileScreen = window.innerWidth < 768;
-    if (!isMobileScreen || isPaused || isSwiping) return;
+    if (!isMobileScreen || !isInView || isPaused || isSwiping) return;
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalSlides);
-    }, 3800);
+    }, 4500);
 
     return () => clearInterval(timer);
-  }, [isPaused, isSwiping, totalSlides]);
+  }, [isInView, isPaused, isSwiping, totalSlides]);
 
   // Touch Swipe Handlers for Buttery Smooth Mobile Swiping
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -80,7 +99,7 @@ export default function Services({ onOpenServices }: ServicesProps) {
   };
 
   return (
-    <section className="ftco-services ftco-section bg-light py-5" id="services">
+    <section ref={sectionRef} className="ftco-services ftco-section bg-light py-5" id="services">
       <div className="container">
         {/* Section Header */}
         <div className="row justify-content-center mb-5 pb-2">
