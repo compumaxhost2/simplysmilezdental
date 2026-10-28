@@ -12,7 +12,7 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    bg: '/images/banner1.jpeg',
+    bg: '/images/banner1.webp',
     title: (
       <>
         Dentistry,  <span>designed around you.</span>
@@ -21,7 +21,7 @@ const slides: Slide[] = [
     subheading: 'Comprehensive, painless dental care in Shaikpet / Manikonda, Hyderabad.'
   },
   {
-    bg: '/images/banner2.jpeg',
+    bg: '/images/banner2.webp',
     title: (
       <>
         A smile designed <br />for who you are.
@@ -35,10 +35,40 @@ export default function Hero() {
   const [current, setCurrent] = useState<number>(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
+    let timer: NodeJS.Timeout | null = null;
+
+    const startTimer = () => {
+      if (timer) return;
+      timer = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % slides.length);
+      }, 6000);
+    };
+
+    const cleanup = () => {
+      window.removeEventListener('scroll', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+      window.removeEventListener('pointerdown', handleInteraction);
+      window.removeEventListener('mousemove', handleInteraction);
+    };
+
+    const handleInteraction = () => {
+      startTimer();
+      cleanup();
+    };
+
+    window.addEventListener('scroll', handleInteraction, { passive: true });
+    window.addEventListener('touchstart', handleInteraction, { passive: true });
+    window.addEventListener('pointerdown', handleInteraction, { passive: true });
+    window.addEventListener('mousemove', handleInteraction, { passive: true });
+
+    // Fallback: start auto-sliding after initial page load settles if no interaction occurs
+    const idleTimeout = setTimeout(startTimer, 15000);
+
+    return () => {
+      if (timer) clearInterval(timer);
+      clearTimeout(idleTimeout);
+      cleanup();
+    };
   }, []);
 
   return (

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Poppins } from 'next/font/google';
 import '../src/index.css';
+import '../public/css/style.css';
 import ClientLayout from '../src/components/ClientLayout';
 
 const poppins = Poppins({
@@ -98,7 +99,7 @@ export default function RootLayout({
         />
 
         {/* Preload critical LCP Hero image for instant rendering on mobile */}
-        <link rel="preload" as="image" href="/images/banner1.jpeg" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/banner1.webp" type="image/webp" fetchPriority="high" />
 
         {/* CDN preconnection for fast icon asset resolution */}
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
@@ -116,9 +117,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
 
-        {/* Core Site Stylesheet */}
-        <link rel="preload" href="/css/style.css" as="style" />
-        <link rel="stylesheet" href="/css/style.css" />
+
       </head>
       <body className={poppins.className} suppressHydrationWarning>
         <ClientLayout>{children}</ClientLayout>
