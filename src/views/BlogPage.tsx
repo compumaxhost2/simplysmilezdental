@@ -11,13 +11,22 @@ export default function BlogPage() {
 
   const blogPosts = [
     {
+      title: "Looking for Invisalign Near Me in Hyderabad? What to Know Before Treatment",
+      slug: "invisalign-near-me-hyderabad",
+      excerpt: "Explore Invisalign options for adults, teens, and kids in Hyderabad. Learn how clear aligners work, treatment costs, benefits, and expert care by Dr. Ankush Kumar.",
+      readTime: "7 min read",
+      author: "Dr. Ankush Kumar",
+      image: "/images/invisalign-near-me-hyderabad.jpg",
+      date: "Latest Guide"
+    },
+    {
       title: "Best Age for Braces for Kids in Hyderabad: Early Orthodontic Checkups in Shaikpet, Manikonda & Tolichowki",
       slug: "best-age-for-braces-kids-hyderabad",
       excerpt: "Learn what the best age is for your child's first orthodontic evaluation, signs they may need braces, Invisalign First vs traditional braces, and treatment costs in Hyderabad.",
       readTime: "6 min read",
       author: "Dr. Susheel Kumar",
       image: "/images/kids-braces-hyderabad-thumbnail.jpg",
-      date: "Latest Guide"
+      date: "Featured"
     },
     {
       title: "Invisalign Aligners for Kids in Hyderabad: Benefits, Right Age, and Expert Care by Dr. Susheel Kumar",
@@ -26,7 +35,7 @@ export default function BlogPage() {
       readTime: "6 min read",
       author: "Dr. Susheel Kumar",
       image: "/images/invisalign-aligners-for-kids-hyderabad.jpg",
-      date: "Featured"
+      date: "Orthodontics"
     }
   ];
 
