@@ -148,7 +148,7 @@ export default function Header({ onOpenServices }: HeaderProps) {
                   <i className="fa-brands fa-whatsapp"></i>
                 </a>
                 <a
-                  href="https://www.instagram.com/sush_micro_dontist?stkn=cTMxejQ2ejl6djR0&utm_source=qr"
+                  href="https://www.instagram.com/sush_micro_pedodontist"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ssd-social-circle instagram"

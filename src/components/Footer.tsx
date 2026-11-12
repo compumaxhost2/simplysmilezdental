@@ -170,7 +170,7 @@ export default function Footer() {
                 <span className="text-muted mr-3" style={{ fontSize: '12.5px' }}>Connect with us:</span>
                 <div className="footer-social-icons d-flex align-items-center">
                   <a
-                    href="https://www.instagram.com/sush_micro_dontist?stkn=cTMxejQ2ejl6djR0&utm_source=qr"
+                    href="https://www.instagram.com/sush_micro_pedodontist"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
@@ -441,7 +441,7 @@ export default function Footer() {
                   </a>
                   <div className="footer-social-icons d-flex align-items-center">
                     <a
-                      href="https://www.instagram.com/sush_micro_dontist?stkn=cTMxejQ2ejl6djR0&utm_source=qr"
+                      href="https://www.instagram.com/sush_micro_pedodontist"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Instagram"
