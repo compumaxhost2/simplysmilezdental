@@ -33,11 +33,13 @@ const slides: Slide[] = [
 
 export default function Hero() {
   const [current, setCurrent] = useState<number>(0);
+  const [hasInteracted, setHasInteracted] = useState<boolean>(false);
 
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null;
 
     const startTimer = () => {
+      setHasInteracted(true);
       if (timer) return;
       timer = setInterval(() => {
         setCurrent((prev) => (prev + 1) % slides.length);
@@ -73,67 +75,79 @@ export default function Hero() {
 
   return (
     <section className="home-slider" style={{ position: 'relative', overflow: 'hidden', minHeight: '550px' }} id="home">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className="slider-item"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            opacity: current === index ? 1 : 0,
-            transition: 'opacity 1s ease-in-out',
-            zIndex: current === index ? 1 : 0,
-            display: 'flex',
-            alignItems: 'center',
-            overflow: 'hidden'
-          }}
-        >
-          <Image
-            src={slide.bg}
-            alt="Simply Smilez Dental Clinic Hero"
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            quality={80}
+      {slides.map((slide, index) => {
+        const isActive = current === index;
+        return (
+          <div
+            key={index}
+            className="slider-item"
             style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-              zIndex: 0
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              opacity: isActive ? 1 : 0,
+              transition: hasInteracted ? 'opacity 1s ease-in-out' : 'none',
+              zIndex: isActive ? 1 : 0,
+              display: 'flex',
+              alignItems: 'center',
+              overflow: 'hidden'
             }}
-          />
-          <div className="overlay" style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.35)', zIndex: 1 }}></div>
-          <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-            <div className="row no-gutters slider-text align-items-center justify-content-end">
-              <div className="col-md-6 text">
-                {index === 0 ? (
-                  <h1 className="mb-4 text-white" style={{ fontSize: '42px', fontWeight: 700, lineHeight: 1.2 }}>
-                    {slide.title}
-                  </h1>
-                ) : (
-                  <h2 className="mb-4 text-white" style={{ fontSize: '42px', fontWeight: 700, lineHeight: 1.2 }}>
-                    {slide.title}
-                  </h2>
-                )}
-                <p className="subheading text-white" style={{ fontSize: '18px', fontWeight: 400 }}>
-                  {slide.subheading}
-                </p>
-                <div className="hero-cta-group mt-4">
-                  <Link
-                    to="/contact"
-                    className="hero-btn-appointment"
-                  >
-                    <i className="fa-regular fa-calendar-check"></i>
-                    <span>Book Appointment</span>
-                  </Link>
+          >
+            <Image
+              src={slide.bg}
+              alt="Simply Smilez Dental Clinic Hero"
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              quality={80}
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+                zIndex: 0
+              }}
+            />
+            <div
+              className="overlay"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'rgba(0,0,0,0.35)',
+                zIndex: 1,
+                pointerEvents: 'none'
+              }}
+            />
+            <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+              <div className="row no-gutters slider-text align-items-center justify-content-end">
+                <div className="col-md-6 text">
+                  {index === 0 ? (
+                    <h1 className="mb-4 text-white" style={{ fontSize: '42px', fontWeight: 700, lineHeight: 1.2 }}>
+                      {slide.title}
+                    </h1>
+                  ) : (
+                    <h2 className="mb-4 text-white" style={{ fontSize: '42px', fontWeight: 700, lineHeight: 1.2 }}>
+                      {slide.title}
+                    </h2>
+                  )}
+                  <p className="subheading text-white" style={{ fontSize: '18px', fontWeight: 400 }}>
+                    {slide.subheading}
+                  </p>
+                  <div className="hero-cta-group mt-4">
+                    <Link
+                      to="/contact"
+                      className="hero-btn-appointment"
+                    >
+                      <i className="fa-regular fa-calendar-check"></i>
+                      <span>Book Appointment</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
 
       {/* Slide Indicators */}
       <div
@@ -150,7 +164,10 @@ export default function Hero() {
         {slides.map((_, idx) => (
           <button
             key={idx}
-            onClick={() => setCurrent(idx)}
+            onClick={() => {
+              setHasInteracted(true);
+              setCurrent(idx);
+            }}
             aria-label={`Slide ${idx + 1}`}
             style={{
               width: current === idx ? '28px' : '12px',

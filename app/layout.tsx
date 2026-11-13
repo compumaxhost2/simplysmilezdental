@@ -107,21 +107,16 @@ export default function RootLayout({
           href="/css/fontawesome/all.min.css"
           as="style"
         />
-        <link
-          id="fa-all-css"
-          rel="stylesheet"
-          href="/css/fontawesome/all.min.css"
-          media="print"
-        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                var fa = document.getElementById('fa-all-css');
-                if (fa) {
-                  fa.addEventListener('load', function() { fa.media = 'all'; });
-                  if (fa.sheet) { fa.media = 'all'; }
-                  setTimeout(function() { if (fa.media !== 'all') fa.media = 'all'; }, 1000);
+                if (!document.getElementById('fa-all-css')) {
+                  var l = document.createElement('link');
+                  l.id = 'fa-all-css';
+                  l.rel = 'stylesheet';
+                  l.href = '/css/fontawesome/all.min.css';
+                  document.head.appendChild(l);
                 }
               })();
             `,

@@ -3307,9 +3307,8 @@ body.mobile-menu-open .mobile-services-dropup-backdrop {
   overflow-x: auto;
   gap: 20px;
   padding: 12px 4px 20px 4px;
-  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   scrollbar-width: thin;
   scrollbar-color: #0284c7 #e2e8f0;
 }
