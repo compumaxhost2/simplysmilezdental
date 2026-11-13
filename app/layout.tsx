@@ -101,21 +101,38 @@ export default function RootLayout({
         {/* Preload critical LCP Hero image for instant rendering on mobile */}
         <link rel="preload" as="image" href="/images/banner1.webp" type="image/webp" fetchPriority="high" />
 
-        {/* CDN preconnection for fast icon asset resolution */}
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
+        {/* Self-hosted, non-render-blocking FontAwesome with font-display: swap */}
         <link
           rel="preload"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          href="/css/fontawesome/all.min.css"
           as="style"
-          crossOrigin="anonymous"
         />
         <link
+          id="fa-all-css"
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
+          href="/css/fontawesome/all.min.css"
+          media="print"
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var fa = document.getElementById('fa-all-css');
+                if (fa) {
+                  fa.addEventListener('load', function() { fa.media = 'all'; });
+                  if (fa.sheet) { fa.media = 'all'; }
+                  setTimeout(function() { if (fa.media !== 'all') fa.media = 'all'; }, 1000);
+                }
+              })();
+            `,
+          }}
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="/css/fontawesome/all.min.css"
+          />
+        </noscript>
 
 
       </head>

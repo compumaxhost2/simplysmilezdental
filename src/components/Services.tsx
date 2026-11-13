@@ -153,6 +153,8 @@ export default function Services({ onOpenServices }: ServicesProps) {
                     loading="lazy"
                     className="w-100 h-100"
                     alt={service.alt}
+                    width={680}
+                    height={450}
                   />
                 </Link>
 
@@ -223,6 +225,8 @@ export default function Services({ onOpenServices }: ServicesProps) {
                         loading="lazy"
                         className="w-100 h-100"
                         alt={service.alt}
+                        width={680}
+                        height={450}
                       />
                     </Link>
 

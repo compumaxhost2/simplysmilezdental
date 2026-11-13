@@ -97,7 +97,7 @@ export default function Hero() {
             fill
             priority={index === 0}
             sizes="100vw"
-            quality={85}
+            quality={80}
             style={{
               objectFit: 'cover',
               objectPosition: 'center',
