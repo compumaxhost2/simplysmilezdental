@@ -11,13 +11,22 @@ export default function BlogPage() {
 
   const blogPosts = [
     {
+      title: "Where Can I Find Pediatric Dentists Who Offer Invisalign Treatment?",
+      slug: "pediatric-dentists-invisalign-treatment-hyderabad",
+      excerpt: "Explore Invisalign First for kids in Hyderabad. Learn how clear aligners work for children, eligibility, benefits, costs, and expert pediatric care at Simply Smilez Dental.",
+      readTime: "6 min read",
+      author: "Dr. Susheel & Dr. Ankush",
+      image: "/images/pediatric-dentists-invisalign-treatment-hyderabad.webp",
+      date: "Latest Guide"
+    },
+    {
       title: "Looking for Invisalign Near Me in Hyderabad? What to Know Before Treatment",
       slug: "invisalign-near-me-hyderabad",
       excerpt: "Explore Invisalign options for adults, teens, and kids in Hyderabad. Learn how clear aligners work, treatment costs, benefits, and expert care by Dr. Ankush Kumar.",
       readTime: "7 min read",
       author: "Dr. Ankush Kumar",
       image: "/images/invisalign-near-me-hyderabad.jpg",
-      date: "Latest Guide"
+      date: "Featured"
     },
     {
       title: "Best Age for Braces for Kids in Hyderabad: Early Orthodontic Checkups in Shaikpet, Manikonda & Tolichowki",
