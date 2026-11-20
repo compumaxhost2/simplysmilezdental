@@ -11,13 +11,22 @@ export default function BlogPage() {
 
   const blogPosts = [
     {
+      title: "How to Choose the Best Dental Clinic in Shaikpet, Hyderabad",
+      slug: "best-dental-clinic-shaikpet-hyderabad",
+      excerpt: "Find the best dental clinic in Shaikpet, Hyderabad. Learn what to consider regarding dentist qualifications, hygiene, technology, treatments, and costs.",
+      readTime: "7 min read",
+      author: "Simply Smilez Dental",
+      image: "/images/dental-clinic-shaikpet-hyderabad.webp",
+      date: "Latest Guide"
+    },
+    {
       title: "Where Can I Find Pediatric Dentists Who Offer Invisalign Treatment?",
       slug: "pediatric-dentists-invisalign-treatment-hyderabad",
       excerpt: "Explore Invisalign First for kids in Hyderabad. Learn how clear aligners work for children, eligibility, benefits, costs, and expert pediatric care at Simply Smilez Dental.",
       readTime: "6 min read",
       author: "Dr. Susheel & Dr. Ankush",
       image: "/images/pediatric-dentists-invisalign-treatment-hyderabad.webp",
-      date: "Latest Guide"
+      date: "Featured"
     },
     {
       title: "Looking for Invisalign Near Me in Hyderabad? What to Know Before Treatment",
