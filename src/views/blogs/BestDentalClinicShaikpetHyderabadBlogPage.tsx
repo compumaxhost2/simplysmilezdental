@@ -108,7 +108,7 @@ export default function BestDentalClinicShaikpetHyderabadBlogPage() {
               {/* Featured Image */}
               <div className="mb-4 rounded overflow-hidden shadow-sm">
                 <img
-                  src="/images/dental-clinic-shaikpet-hyderabad.webp"
+                  src="/images/dental-clinic-shaikpet-hyderabad.webp?v=2"
                   alt="Simply Smilez Dental Clinic in Shaikpet, Hyderabad"
                   className="img-fluid w-100"
                   style={{ maxHeight: '420px', objectFit: 'cover' }}

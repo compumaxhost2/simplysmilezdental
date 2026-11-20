@@ -16,7 +16,7 @@ export default function BlogPage() {
       excerpt: "Find the best dental clinic in Shaikpet, Hyderabad. Learn what to consider regarding dentist qualifications, hygiene, technology, treatments, and costs.",
       readTime: "7 min read",
       author: "Simply Smilez Dental",
-      image: "/images/dental-clinic-shaikpet-hyderabad.webp",
+      image: "/images/dental-clinic-shaikpet-hyderabad.webp?v=2",
       date: "Latest Guide"
     },
     {
